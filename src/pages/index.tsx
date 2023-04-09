@@ -1,5 +1,5 @@
-import { ITypeProps } from '@/components/TypeList/types/typeslist.types'
-import TypeList from '@/components/TypeList/TypesList'
+import { ITypeProps } from '@/components/TypesComponent/types/typeslist.types'
+import TypeList from '@/components/TypesComponent/TypesComponent'
 import { getAllTypes } from '@/services/typelist.service'
 import { GetServerSideProps, InferGetServerSidePropsType } from 'next'
 
@@ -23,6 +23,8 @@ export const getServerSideProps: GetServerSideProps<IServerSideProps> = async ()
   }
 }
 
-const Home = ({ typesList }: InferGetServerSidePropsType<typeof getServerSideProps>) => <TypeList prueba={typesList} />
+const Home = ({ typesList }: InferGetServerSidePropsType<typeof getServerSideProps>) => (
+  <TypeList allTypesList={typesList} />
+)
 
 export default Home

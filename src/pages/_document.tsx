@@ -2,7 +2,7 @@ import Document, { DocumentContext, DocumentInitialProps, Head, Html, Main, Next
 import { resetServerContext } from 'react-beautiful-dnd'
 type Props = {}
 
-class MyDocument extends Document<Props> {
+class TypesTableAppDocument extends Document<Props> {
   static async getInitialProps(ctx: DocumentContext): Promise<DocumentInitialProps> {
     const initialProps = await Document.getInitialProps(ctx)
     resetServerContext()
@@ -24,4 +24,4 @@ class MyDocument extends Document<Props> {
   }
 }
 
-export default MyDocument
+export default TypesTableAppDocument

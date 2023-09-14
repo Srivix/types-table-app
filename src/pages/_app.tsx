@@ -6,7 +6,7 @@ export default function TypesTableApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <title>IvanCity</title>
+        <title>Pokemon Types</title>
       </Head>
       <CssBaseline />
       <Component {...pageProps} />

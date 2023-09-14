@@ -13,7 +13,13 @@ const EnemyTypesList = ({ droppableId, typesList }: IListProps) => {
     <Droppable droppableId={droppableId} direction='horizontal'>
       {provided => (
         <>
-          <Stack height={80} margin={2} alignItems='center' ref={provided.innerRef} {...provided.droppableProps}>
+          <Stack
+            height={80}
+            margin={{ md: 2, xs: 0 }}
+            alignItems='center'
+            ref={provided.innerRef}
+            {...provided.droppableProps}
+          >
             <Typography
               sx={{ textShadow: theme.palette.mode === 'dark' ? '2px 2px 2px rgba(0,0,0,.3)' : '' }}
               color={theme.palette.primary.contrastText}

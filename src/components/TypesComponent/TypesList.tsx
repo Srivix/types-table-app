@@ -14,7 +14,7 @@ const TypesList = ({ droppableId, typesList }: IListProps) => {
     <Droppable droppableId={droppableId} direction='vertical'>
       {provided => (
         <>
-          <Stack gap={1} margin={2} alignItems='center' ref={provided.innerRef} {...provided.droppableProps}>
+          <Stack width={1} gap={1} padding={2} alignItems='center' ref={provided.innerRef} {...provided.droppableProps}>
             <TextField
               className='text'
               variant='outlined'

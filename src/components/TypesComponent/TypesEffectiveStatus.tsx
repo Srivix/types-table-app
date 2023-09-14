@@ -35,7 +35,7 @@ const TypesEffectiveStatus = ({
   }, [enemyTypesList])
 
   return (
-    <Stack alignItems='center'>
+    <Stack width={1} alignItems='center' paddingX={1}>
       <Typography
         sx={{ textShadow: theme.palette.mode === 'dark' ? '2px 2px 2px rgba(0,0,0,.3)' : '' }}
         color={theme.palette.primary.contrastText}
@@ -44,10 +44,9 @@ const TypesEffectiveStatus = ({
       </Typography>
       <Stack
         direction='column'
-        width={{ sm: 560, xs: 330 }}
+        width={{ sm: 560, xs: 1 }}
         marginTop={1}
         padding={2}
-        marginX={3}
         marginBottom={3}
         border={`4px solid ${theme?.palette.secondary.main}`}
         borderRadius='24px'

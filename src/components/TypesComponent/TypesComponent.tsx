@@ -26,9 +26,14 @@ const TypesComponent = ({ allTypesList }: { allTypesList: ITypeProps[] }) => {
 
   return (
     <DragDropContext onDragEnd={onDragEnd}>
-      <Stack direction={{ md: 'row', sm: 'column' }}>
+      <Stack
+        width={{ xs: 1, md: 'auto' }}
+        direction={{ md: 'row', sm: 'column' }}
+        justifyContent='center'
+        alignItems='center'
+      >
         <TypesList droppableId={DroppableLists.TYPESLIST} typesList={typesList} />
-        <Stack alignItems='center' direction='column' width={{ sm: 600, xs: 350 }}>
+        <Stack alignItems='center' direction='column' width={{ sm: 600, xs: 1 }}>
           <Stack direction={{ sm: 'row', xs: 'column' }} justifyContent='center'>
             <AttackType droppableId={DroppableLists.ATTACKTYPE} attackType={attackType} />
             <EnemyTypesList droppableId={DroppableLists.ENEMYTYPELIST} typesList={enemyTypesList} />

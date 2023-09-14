@@ -12,7 +12,13 @@ const AttackType = ({ droppableId, attackType }: IAttackTypeProps) => {
   return (
     <Droppable droppableId={droppableId} direction='horizontal'>
       {provided => (
-        <Stack margin={2} height={80} alignItems='center' ref={provided.innerRef} {...provided.droppableProps}>
+        <Stack
+          margin={{ md: 2, xs: 0 }}
+          height={80}
+          alignItems='center'
+          ref={provided.innerRef}
+          {...provided.droppableProps}
+        >
           <Typography
             sx={{ textShadow: theme.palette.mode === 'dark' ? '2px 2px 2px rgba(0,0,0,.3)' : '' }}
             color={theme.palette.primary.contrastText}

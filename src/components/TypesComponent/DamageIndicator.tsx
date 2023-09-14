@@ -9,12 +9,13 @@ const DamageIndicator = ({ damage }: { damage: number }) => {
 
   return (
     <Stack
-      width={{ sm: 490, xs: 340 }}
+      width={{ sm: 490, xs: 1 }}
       divider={<Divider variant='middle' orientation='vertical' />}
       direction='row'
       justifyContent='center'
       alignItems='center'
       marginY={2}
+      paddingX={1}
     >
       {damageArray.map(damageIndicator => (
         <Typography

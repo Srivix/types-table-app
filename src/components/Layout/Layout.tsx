@@ -94,9 +94,7 @@ const Layout = ({ children }: { children: ReactNode }) => {
         {children}
       </Stack>
       {/*Footer*/}
-      <Stack height={64} width={1} sx={{ backgroundColor: theme.palette.primary.dark }}>
-        Footer
-      </Stack>
+      <Stack height={64} width={1} sx={{ backgroundColor: theme.palette.primary.dark }} />
     </ThemmeContext.Provider>
   )
 }

@@ -8,17 +8,17 @@ export const getDamageColor = (damage: number) => {
       case DamageEffectivenesses.VERYINEFFECTIVE:
         return '#EB1919'
       case DamageEffectivenesses.INEFFECTIVE:
-        return '#E78C00'
+        return '#D35400'
       case DamageEffectivenesses.NORMAL:
         return '#45AF00'
       case DamageEffectivenesses.EFFECTIVE:
-        return '#003DDF'
+        return '#1BBABC'
       case DamageEffectivenesses.SUPEREFFECTIVE:
         return '#8000DF'
       default:
         return '#A5A5A5'
     }
-  }
+}
 
 export const getEffectivenessName = (effectiveness: number) => {
     switch (effectiveness) {

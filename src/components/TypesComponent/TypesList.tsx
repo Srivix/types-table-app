@@ -1,12 +1,14 @@
 import { DroppableLists } from '@/utils/enums'
 import { Stack, TextField } from '@mui/material'
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 import { Droppable } from 'react-beautiful-dnd'
+import { ThemmeContext } from '../Layout/Layout'
 import { TypeItem } from './TypesComponent'
 import { IListProps } from './types/typeslist.types'
 
 const TypesList = ({ droppableId, typesList }: IListProps) => {
   const [search, setSearch] = useState<string>('')
+  const theme = useContext(ThemmeContext)
 
   return (
     <Droppable droppableId={droppableId} direction='vertical'>
@@ -16,13 +18,15 @@ const TypesList = ({ droppableId, typesList }: IListProps) => {
             <TextField
               className='text'
               variant='outlined'
-              placeholder='Search'
+              placeholder='Buscar'
               onChange={search => setSearch(search.target.value)}
               inputProps={{ style: { padding: '4px 12px 4px 12px' } }}
               InputProps={{
                 style: {
+                  color: theme.palette.primary.contrastText,
+                  backgroundColor: theme.palette.primary.light,
                   width: 190,
-                  border: '4px solid blue',
+                  border: `4px solid ${theme.palette.secondary.main}`,
                   borderRadius: '32px',
                 },
               }}
@@ -34,10 +38,10 @@ const TypesList = ({ droppableId, typesList }: IListProps) => {
               gap={1}
               paddingY='8px'
               paddingX='4px'
-              border='4px solid blue'
+              border={`4px solid ${theme.palette.secondary.main}`}
               borderRadius='24px'
               overflow='auto'
-              sx={{ '&::-webkit-scrollbar': { display: 'none' } }}
+              sx={{ '&::-webkit-scrollbar': { display: 'none' }, backgroundColor: theme.palette.primary.light }}
             >
               {typesList &&
                 typesList.length > 0 &&

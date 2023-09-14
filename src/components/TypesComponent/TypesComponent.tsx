@@ -26,10 +26,10 @@ const TypesComponent = ({ allTypesList }: { allTypesList: ITypeProps[] }) => {
 
   return (
     <DragDropContext onDragEnd={onDragEnd}>
-      <Stack direction='row'>
+      <Stack direction={{ md: 'row', sm: 'column' }}>
         <TypesList droppableId={DroppableLists.TYPESLIST} typesList={typesList} />
-        <Stack direction='column'>
-          <Stack direction='row'>
+        <Stack alignItems='center' direction='column' width={{ sm: 600, xs: 350 }}>
+          <Stack direction={{ sm: 'row', xs: 'column' }} justifyContent='center'>
             <AttackType droppableId={DroppableLists.ATTACKTYPE} attackType={attackType} />
             <EnemyTypesList droppableId={DroppableLists.ENEMYTYPELIST} typesList={enemyTypesList} />
           </Stack>
@@ -50,7 +50,7 @@ export const TypeItem = ({
   listType,
 }: ITypeProps & { index: number; listType?: string }) => {
   const dragId = listType ? `${listType}-${name}` : name
-  const olename = names.find(name => name.language.name === 'es')?.name
+  const typeName = names.find(name => name.language.name === 'es')?.name
 
   return (
     <Draggable draggableId={dragId} index={index} key={id}>
@@ -67,8 +67,7 @@ export const TypeItem = ({
             background: color,
             boxShadow: 'inset 3px 3px 3px rgba(255,255,255,.7), inset -2px -2px 2px -1px rgba(0,0,0,.7)',
             textShadow: '2px 2px 2px rgba(0,0,0,.3)',
-            width: 150,
-            minWidth: 150,
+            width: 140,
             height: 32,
             minHeight: 32,
             display: 'flex',
@@ -81,7 +80,7 @@ export const TypeItem = ({
             transitionDuration: `!important 0.0001s`,
           }}
         >
-          <Typography>{olename}</Typography>
+          <Typography>{typeName}</Typography>
         </Box>
       )}
     </Draggable>

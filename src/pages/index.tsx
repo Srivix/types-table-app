@@ -1,3 +1,4 @@
+import Layout from '@/components/Layout/Layout'
 import { ITypeProps } from '@/components/TypesComponent/types/typeslist.types'
 import TypeList from '@/components/TypesComponent/TypesComponent'
 import { getAllTypes } from '@/services/typelist.service'
@@ -23,8 +24,12 @@ export const getServerSideProps: GetServerSideProps<IServerSideProps> = async ()
   }
 }
 
-const Home = ({ typesList }: InferGetServerSidePropsType<typeof getServerSideProps>) => (
-  <TypeList allTypesList={typesList} />
-)
+const Home = ({ typesList }: InferGetServerSidePropsType<typeof getServerSideProps>) => {
+  return (
+    <Layout>
+      <TypeList allTypesList={typesList} />
+    </Layout>
+  )
+}
 
 export default Home

@@ -14,6 +14,7 @@ const EnemyTypesList = ({ droppableId, typesList }: IListProps) => {
       {provided => (
         <>
           <Stack
+            width={1}
             height={80}
             margin={{ md: 2, xs: 0 }}
             alignItems='center'

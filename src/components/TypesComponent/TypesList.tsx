@@ -1,5 +1,5 @@
 import { DroppableLists } from '@/utils/enums'
-import { Stack, TextField } from '@mui/material'
+import { Stack, TextField, Typography } from '@mui/material'
 import { useContext, useState } from 'react'
 import { Droppable } from 'react-beautiful-dnd'
 import { ThemmeContext } from '../Layout/Layout'
@@ -15,6 +15,12 @@ const TypesList = ({ droppableId, typesList }: IListProps) => {
       {provided => (
         <>
           <Stack width={1} gap={1} padding={2} alignItems='center' ref={provided.innerRef} {...provided.droppableProps}>
+            <Typography
+              sx={{ textShadow: theme.palette.mode === 'dark' ? '2px 2px 2px rgba(0,0,0,.3)' : '' }}
+              color={theme.palette.primary.contrastText}
+            >
+              Arrastra los tipos
+            </Typography>
             <TextField
               className='text'
               variant='outlined'
